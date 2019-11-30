@@ -1,3 +1,8 @@
+# initialize terraform and add plugins
+
+terraform init
+
+
 # Creating a terraform plan -- verify changes
 # Include sudo if you are on cloud9
 
