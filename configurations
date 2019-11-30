@@ -1,0 +1,9 @@
+# Creating a terraform plan
+# Include sudo if you are on cloud9
+
+terraform plan -var "do_token=${DO_TOKEN}" -var "pub_key=$HOME/.ssh/dokey.pub" -var "pvt_key=$HOME/.ssh/dokey" -var "ssh_fingerprint=$SSH_FINGERPRINT"
+
+# Creating a terraform apply
+# Include sudo if you are on cloud9
+
+terraform apply -var "do_token=${DO_TOKEN}" -var "pub_key=$HOME/.ssh/dokey.pub" -var "pvt_key=$HOME/.ssh/dokey" -var "ssh_fingerprint=$SSH_FINGERPRINT"
