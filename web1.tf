@@ -1,7 +1,7 @@
 resource "digitalocean_droplet" "web1" {
 	image = "ubuntu-18-04-x64"
 	name = "web1"
-	region = "nyc2"
+	region = "nyc1"
 	size = "s-1vcpu-1gb"
 	private_networking = "true"
 	ssh_keys = [
@@ -10,6 +10,7 @@ resource "digitalocean_droplet" "web1" {
 	connection {
 		user = "root"
 		type = "ssh"
+		host = self.ipv4_address
 		private_key = "${file(var.pvt_key)}"
 		timeout = "2m"
 	}
