@@ -12,3 +12,18 @@ terraform plan -var "do_token=${DO_TOKEN}" -var "pub_key=$HOME/.ssh/dokey.pub" -
 # Include sudo if you are on cloud9
 
 terraform apply -var "do_token=${DO_TOKEN}" -var "pub_key=$HOME/.ssh/dokey.pub" -var "pvt_key=$HOME/.ssh/dokey" -var "ssh_fingerprint=$SSH_FINGERPRINT"
+
+# Tips and Tricks
+
+## 1. To see logs 
+TF_LOG=1
+
+## 2. To see State information or refresh the information
+
+terraform refresh -var "do_token=${DO_TOKEN}" -var "pub_key=$HOME/.ssh/dokey.pub" -var "pvt_key=$HOME/.ssh/dokey" -var "ssh_fingerprint=$SSH_FINGERPRINT"
+
+## 3. To destroy a plan
+
+terraform plan -destroy -out=DESTROYallTerraforms.tfplan -var "do_token=${DO_TOKEN}" -var "pub_key=$HOME/.ssh/dokey.pub" -var "pvt_key=$HOME/.ssh/dokey" -var "ssh_fingerprint=$SSH_FINGERPRINT"
+
+terraform apply DESTROYallTerraforms.tfplan
